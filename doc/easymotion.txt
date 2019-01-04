@@ -482,7 +482,7 @@ Search motion respect previous direction
 
     This is vim compatible |n| & |N| easymotion. Unlike |<Plug>(easymotion-n)|
     and |<Plug>(easymotion-N)| 's direction is always forward or backward,
-    these motions consider previous search direction. 
+    these motions consider previous search direction.
 
 Within line motion ~
                                                        *easymotion-within-line*
@@ -1099,6 +1099,23 @@ Use CSApprox                                        *EasyMotion_force_csapprox*
     let g:EasyMotion_force_csapprox = 1
 <
     Default: 0
+
+
+Execute command after jump                           *EasyMotion_post_command*
+                                                   *g:EasyMotion_post_command*
+    if exists, after the jump the following command is executed
+>
+    call execute(g:EasyMotion_post_command, '')
+<
+
+Execute command after jump                     *EasyMotion_post_command_once*
+                                              *g:EasyMotion_post_command_once*
+    if exists, after the jump the following command is executed
+>
+    call execute(g:EasyMotion_post_command_once, '')
+    unlet g:EasyMotion_postfix_once
+<
+
 
 ------------------------------------------------------------------------------
 Custom mappings                                    *easymotion-custom-mappings*

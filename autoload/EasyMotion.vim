@@ -1590,6 +1590,15 @@ function! s:EasyMotion(regexp, direction, visualmode, is_inclusive, ...) " {{{
             " -- Activate EasyMotion ----------------- {{{
             let s:EasyMotion_is_active = 1
             call EasyMotion#attach_active_autocmd() "}}}
+            if exists('g:EasyMotion_post_command')
+                call execute(g:EasyMotion_post_command, '')
+            endif
+            if exists('g:EasyMotion_post_command_once')
+                call execute(g:EasyMotion_post_command_once, '')
+            endif
+        endif
+        if exists('g:EasyMotion_post_command_once')
+            unlet g:EasyMotion_post_command_once
         endif
     endtry
 endfunction " }}}
